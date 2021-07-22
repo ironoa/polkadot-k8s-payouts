@@ -1,4 +1,4 @@
-# polkadot-k8s-payouts
+# Polkadot-K8s-Payouts
 
 A tool to deploy an utily that automatically claims your Kusama/Polkadot validator rewards in a Kubernetes cluster. 
 
@@ -16,7 +16,7 @@ ALESSIO (Validator on Kusama): GaK38GT7LmgCpRSTRdDC2LeiMaV9TJmx8NmQcb9L3cJ3fyX
 ## Table Of Contents
 
 * [Requirements](#requirements)
-* [Polkadot Payouts](#polkadot-secure-validator)
+* [Polkadot Payouts](#polkadot-payouts)
 * [How To Configure the Application](#how-to-configure-the-application)
 * [How To Deploy it Locally](#how-to-deploy-it-locally)
 * [How To Deploy it in Production](#how-to-deploy-it-in-production)
@@ -45,7 +45,7 @@ validatorsKusama:
   stashAccount: GaK38GT7LmgCpRSTRdDC2LeiMaV9TJmx8NmQcb9L3cJ3fyX
 ```
 
-You can find a sample of the environment variables related file, meant to contain also your secrets and your passwords:
+You can find a sample of the environment variables related file [file](config/env.sample.sh), meant to contain also your secrets and your passwords:
 
 ```sh
 export KUSAMA_CLAIMER_PASSWORD='yourPassword'
