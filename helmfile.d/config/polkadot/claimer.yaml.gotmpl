@@ -1,11 +1,17 @@
-applicationConfig:
-  logLevel: info
+config:
   wsEndpoint: "wss://rpc.polkadot.io/"
-  isDeepHistoryCheckForced: false
   claimsThirdParty:
-    claimerKeystore:
-      filePath: 
-      passwordPath: 
     targets:
-    - alias: ALESSIO
-      validatorAddress: "16cdSZUq7kxq6mtoVMWmYXo62FnNGT9jzWjVRUg87CpL9pxP"
+    {{- range $index, $value := .Environment.Values.validatorsPolkadot }}
+    - alias: {{ $value.name }}
+      validatorAddress: {{ $value.stashAccount }}
+    {{- end }}
+
+secret:
+  claimerPasswordValue: {{ env "POLKADOT_CLAIMER_PASSWORD" }}
+  claimerWalletValue: |
+    {{ env "POLKADOT_CLAIMER_WALLET" }} 
+
+cronjob:
+  schedule: "0 12 */2 * *"
+  timeout: true

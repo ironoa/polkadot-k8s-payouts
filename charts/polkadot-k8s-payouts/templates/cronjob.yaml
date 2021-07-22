@@ -1,0 +1,57 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Release.Name }}
+spec:
+  schedule: {{ .Values.cronjob.schedule | quote }}
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        metadata:
+          labels:
+            app: {{ .Release.Name }}
+          annotations:
+            checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        spec:
+          restartPolicy: Never
+          containers:
+          - name: {{ .Release.Name }}
+            image: {{ .Values.image.repo }}:{{ .Values.image.tag }}
+            imagePullPolicy: IfNotPresent
+            {{ if eq .Values.config.cronjob.timeout true }}
+            command: ["timeout", "1200", "yarn", "start"]
+            {{ end }} 
+            args:
+            - -c
+            - /app/config/main.yaml    
+            {{ if ne .Values.environment "ci" }}
+            resources:
+              {{- toYaml .Values.resources | nindent 14 }}
+            {{ end }}
+            volumeMounts:
+            - name: config
+              mountPath: /app/config
+            - name: password
+              mountPath: {{ dir .Values.config.claimsThirdParty.claimerKeystore.passwordPath }} 
+            - name: wallet
+              mountPath: {{ dir .Values.config.claimsThirdParty.claimerKeystore.filePath }}   
+          volumes:
+          - name: config
+            configMap:
+              name: {{ .Release.Name }}
+          - name: password
+            secret:
+              secretName: {{ .Release.Name }}-password
+              items:
+              - key: claimer_password
+                path: {{ base .Values.config.claimsThirdParty.claimerKeystore.passwordPath }}
+          - name: wallet
+            secret:
+              secretName: {{ .Release.Name }}-wallet
+              items:
+              - key: claimer_wallet_json
+                path: {{ base .Values.config.claimsThirdParty.claimerKeystore.filePath }}           

@@ -1,6 +1,10 @@
 environments:
   production:
-  ci:
+    values:
+    - ../config/nodes.yaml
+  local:
+    values:
+    - ../config/nodes.yaml
 
 repositories:
 - name: w3f
@@ -8,13 +12,13 @@ repositories:
 
 releases:
 - name: kusama-payouts-claimer
-  chart: w3f/accountant
+  chart: ../charts/polkadot-k8s-payouts
   values:
   - ./config/claimer.yaml.gotmpl
   - ./config/kusama/claimer.yaml.gotmpl
 
 - name: polkadot-payouts-claimer
-  chart: w3f/accountant
+  chart: ../charts/polkadot-k8s-payouts
   values:
   - ./config/claimer.yaml.gotmpl
   - ./config/polkadot/claimer.yaml.gotmpl  
