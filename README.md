@@ -12,7 +12,7 @@ ALESSIO (Validator on Kusama): GaK38GT7LmgCpRSTRdDC2LeiMaV9TJmx8NmQcb9L3cJ3fyX
 
 ## Related Projects
 
-- https://github.com/ironoa/polkadot-k8s-monitor
+- https://github.com/ironoa/polkadot-k8s-monitor: this other project will help you deploy a monitoring cluster for substrate based nodes. You can think to deploy the payout tool in this cluster as an addon, or else in an another Kubernetes cluster you prefer.
 
 ## Table Of Contents
 
