@@ -37,7 +37,7 @@ This project is particularly suited to be working in synergy with the [polkadot-
 
 ## Claimer Account
 
-This is a hot wallet you deploy onto the cluster. It's job is to sign and send the payoutStakers extrinsics for your monitored accounts. To do so, it is obviusly gonna pay some negligible fees for the transactions submissions. For this reason, that wallet should be founded ( just a few euros and then you can forget about it ) 
+This is a hot wallet you deploy onto the cluster. Its job is to sign and send the payoutStakers extrinsics for your monitored accounts. To do so, it is obviusly gonna pay some negligible fees for the transactions submissions. For this reason, that wallet should be founded ( just a few euros and then you can forget about it ) 
 
 ### Security
 
