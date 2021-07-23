@@ -18,6 +18,7 @@ ALESSIO (Validator on Kusama): GaK38GT7LmgCpRSTRdDC2LeiMaV9TJmx8NmQcb9L3cJ3fyX
 
 * [Requirements](#requirements)
 * [Polkadot Payouts](#polkadot-payouts)
+* [Claimer Account](#claimer-account)
 * [How To Configure the Application](#how-to-configure-the-application)
 * [How To Deploy it Locally](#how-to-deploy-it-locally)
 * [How To Deploy it in Production](#how-to-deploy-it-in-production)
@@ -29,9 +30,18 @@ ALESSIO (Validator on Kusama): GaK38GT7LmgCpRSTRdDC2LeiMaV9TJmx8NmQcb9L3cJ3fyX
 * A Kubernetes cluster (if you don't want to use kind)
 * kubectl: https://kubernetes.io/docs/tasks/tools/
 * helmfile: https://github.com/roboll/helmfile#installation => brew install helmfile (on macOS)
+* A founded Claimer Account (ideally, one for each network you want to work with)
 
 ## Polkadot Payouts
-This project is particularly suited to be working in synergy with the [polkadot-k8s-monitor](https://github.com/ironoa/polkadot-k8s-monitor), and his goal is to automate the [payout claims](https://wiki.polkadot.network/docs/learn-simple-payouts) for the validators you are running. You can use this tool even if you are nominating your favourite validators and you want to be sure to not miss any payout.
+This project is particularly suited to be working in synergy with the [polkadot-k8s-monitor](https://github.com/ironoa/polkadot-k8s-monitor), and his goal is to automate the [payout claims](https://wiki.polkadot.network/docs/learn-simple-payouts) for the validators you are running. You can use this tool even if you are nominating your favourite validators and you want to be sure to not miss any payout. It will submit the payoutStakers extrinsics for you !
+
+## Claimer Account
+
+This is a hot wallet you deploy onto the cluster. It's job is to sign and send the payoutStakers extrinsics for your monitored accounts. To do so, it is obviusly gonna pay some negligible fees for the transactions submissions. For this reason, that wallet should be founded ( just a few euros and then you can forget about it ) 
+
+### Security
+
+You should create a dedicated wallet for this scope (ideally, one for each network you want to work with), and then found it with no more than the equivalent of few euros. For this reason, even though this is an hot wallet, there are no risks on deploying it
 
 ## How To Configure the Application
 
