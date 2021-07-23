@@ -1,6 +1,7 @@
 # Polkadot-K8s-Payouts
 
-A tool to deploy an utily that automatically claims your Kusama/Polkadot validator rewards in a Kubernetes cluster. 
+A tool to deploy an utily that automatically claims your Kusama/Polkadot validator rewards in a Kubernetes cluster.  
+This tool leverages on the official [polkadot-payout](https://github.com/w3f/polkadot-payouts) application from Web3 Foundation.
 
 ## My on-chain Identity
 
@@ -30,7 +31,7 @@ ALESSIO (Validator on Kusama): GaK38GT7LmgCpRSTRdDC2LeiMaV9TJmx8NmQcb9L3cJ3fyX
 * helmfile: https://github.com/roboll/helmfile#installation => brew install helmfile (on macOS)
 
 ## Polkadot Payouts
-This project is particularly suited to be working in synergy with the [polkadot-k8s-monitor](https://github.com/ironoa/polkadot-k8s-monitor), and his goal is to automate the [payout claims](https://wiki.polkadot.network/docs/learn-simple-payouts) for your validators.
+This project is particularly suited to be working in synergy with the [polkadot-k8s-monitor](https://github.com/ironoa/polkadot-k8s-monitor), and his goal is to automate the [payout claims](https://wiki.polkadot.network/docs/learn-simple-payouts) for the validators you are running. You can use this tool even if you are nominating your favourite validators and you want to be sure to not miss any payout.
 
 ## How To Configure the Application
 
