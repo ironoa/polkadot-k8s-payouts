@@ -84,6 +84,9 @@ cp config/nodes.sample.yaml config/nodes.yaml #create the default nodes config f
 # just re trigger it to deploy configuration changes
 ```
 
+## How it will look like
+![log](assets/log.png)
+
 ## Future Developments
 - [ ] Improve the documentation
 - [ ] Youtube tutorials 
