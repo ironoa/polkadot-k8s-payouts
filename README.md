@@ -1,6 +1,6 @@
 # Polkadot-K8s-Payouts
 
-A tool to deploy an utily that automatically claims your Kusama/Polkadot validator rewards in a Kubernetes cluster.  
+A tool to deploy an utility that automatically claims your Kusama/Polkadot validator rewards in a Kubernetes cluster.  
 This tool leverages on the official [polkadot-payout](https://github.com/w3f/polkadot-payouts) application from Web3 Foundation.
 
 ## My on-chain Identity
