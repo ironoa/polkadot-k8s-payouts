@@ -45,7 +45,7 @@ You should create a dedicated wallet for this scope (ideally, one for each netwo
 
 ## How To Configure the Application
 
-You can find a sample of the nodes related yaml config file [here](config/nodes.sample.yaml).  
+You can find a sample of the nodes related yaml config file [here](config/validators.sample.yaml).  
 
 ```yaml
 validatorsPolkadot:

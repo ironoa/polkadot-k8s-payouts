@@ -1,10 +1,10 @@
 environments:
   production:
     values:
-    - ../config/nodes.yaml
+    - ../config/validators.yaml
   local:
     values:
-    - ../config/nodes.yaml
+    - ../config/validators.yaml
 
 repositories:
 - name: w3f
