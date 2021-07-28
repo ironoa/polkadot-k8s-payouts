@@ -60,7 +60,7 @@ You can find a sample of the environment variables related file [file](config/en
 
 ```sh
 export KUSAMA_CLAIMER_PASSWORD='yourPassword'
-export POLKADOT_CLAIMER_WALLET=`{"address":"xx","encoded":"xx","encoding":{"content":["pkcs8","sr25519"],"type":["scrypt","xsalsa20-poly1305"],"version":"3"},"meta":{"name":"xx","whenCreated":xx}}`
+export KUSAMA_CLAIMER_WALLET=`{"address":"xx","encoded":"xx","encoding":{"content":["pkcs8","sr25519"],"type":["scrypt","xsalsa20-poly1305"],"version":"3"},"meta":{"name":"xx","whenCreated":xx}}`
 ```
 
 Once you have set up the nodes and the secrets/passwords, you can focus on fine tuning the deployment (though default values are provided): [config](helmfile.d/config)
