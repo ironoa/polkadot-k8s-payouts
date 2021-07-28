@@ -96,6 +96,15 @@ cp config/nodes.sample.yaml config/nodes.yaml #create the default nodes config f
 # just re trigger it to deploy configuration changes
 ```
 
+## Helm Chart
+The Helm Chart is also deployed [here](https://github.com/ironoa/helm-charts/tree/gh-pages)
+
+```sh
+helm repo add ironoa https://ironoa.github.io/helm-charts/
+```
+
+You can then run `helm search repo ironoa` to see the charts.
+
 ## How it will look like
 ![log](assets/log.png)
 

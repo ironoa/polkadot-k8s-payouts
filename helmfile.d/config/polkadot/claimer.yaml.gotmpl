@@ -1,6 +1,6 @@
 config:
   wsEndpoint: "wss://rpc.polkadot.io/"
-  claimsThirdParty:
+  claimThirdParty:
     targets:
     {{- range $index, $value := .Environment.Values.validatorsPolkadot }}
     - alias: {{ $value.name }}

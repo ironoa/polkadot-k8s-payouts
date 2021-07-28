@@ -2,13 +2,16 @@ environment: production
 
 image:
   repo: web3f/accountant
-  tag: v0.2.0
+  tag: v0.4.1
 
 config:
   logLevel: info
   wsEndpoint: "wss://rpc.polkadot.io/"
   isDeepHistoryCheckForced: false
-  claimsThirdParty:
+  gracePeriod:
+    enabled: false
+    eras: 4
+  claimThirdParty:
     claimerKeystore:
       filePath: '/app/keystore/wallet/wallet.json'
       passwordPath: '/app/keystore/password/password'

@@ -1,4 +1,5 @@
-description: Polkadot Watcher
+description: Polkadot K8s Payouts
 name: polkadot-k8s-payouts
-version: v0.1.0
+version: v0.1.1
+appVersion: v0.4.1
 apiVersion: v2
