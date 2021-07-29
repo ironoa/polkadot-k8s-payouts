@@ -13,6 +13,11 @@ ALESSIO (Validator on Kusama): GaK38GT7LmgCpRSTRdDC2LeiMaV9TJmx8NmQcb9L3cJ3fyX
 ## Related Projects
 
 - https://github.com/ironoa/polkadot-k8s-monitor: this other project will help you deploy a monitoring cluster for substrate based nodes. You can think to deploy the payout tool in this cluster as an addon, or else in an another Kubernetes cluster you prefer.
+- The Helm Chart is also deployed [here](https://github.com/ironoa/helm-charts/tree/gh-pages).  
+  ```sh
+  helm repo add ironoa https://ironoa.github.io/helm-charts/
+  ```
+  You can then run `helm search repo ironoa` to see the charts.
 
 ## Table Of Contents
 
@@ -95,15 +100,6 @@ cp config/validators.sample.yaml config/validators.yaml #create the default node
 ./scripts/deployProduction.sh
 # just re trigger it to deploy configuration changes
 ```
-
-## Helm Chart
-The Helm Chart is also deployed [here](https://github.com/ironoa/helm-charts/tree/gh-pages)
-
-```sh
-helm repo add ironoa https://ironoa.github.io/helm-charts/
-```
-
-You can then run `helm search repo ironoa` to see the charts.
 
 ## How it will look like
 ![log](assets/log.png)
