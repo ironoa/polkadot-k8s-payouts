@@ -72,7 +72,7 @@ I'd reccomend to test first this approach
 git clone https://github.com/ironoa/polkadot-k8s-payouts.git
 cd polkadot-k8s-payouts
 cp config/env.sample.local.sh config/env.sh #create the default env config file
-cp config/nodes.sample.yaml config/nodes.yaml #create the default nodes config file
+cp config/validators.sample.yaml config/validators.yaml #create the default nodes config file
 #just the fist time
 
 ./scripts/deployLocal.sh
@@ -89,7 +89,7 @@ First, connect yourself to your chosen kubernetes cluster.
 git clone https://github.com/ironoa/polkadot-k8s-payouts.git 
 cd polkadot-k8s-payouts
 cp config/env.sample.complete.sh config/env.sh #create the default env config file
-cp config/nodes.sample.yaml config/nodes.yaml #create the default nodes config file
+cp config/validators.sample.yaml config/validators.yaml #create the default nodes config file
 #just the fist time
 
 ./scripts/deployProduction.sh
