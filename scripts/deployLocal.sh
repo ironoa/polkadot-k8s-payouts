@@ -11,8 +11,8 @@ if ! [ -f ../config/env.sh ]; then
   exit 1
 fi
 
-if ! [ -f ../config/nodes.yaml ]; then
-  echo "nodes.yaml does not exist. Use nodes.sample.yaml as example to generate it." >&2
+if ! [ -f ../config/validators.yaml ]; then
+  echo "nodes.yaml does not exist. Use validators.sample.yaml as example to generate it." >&2
   exit 1
 fi
 
