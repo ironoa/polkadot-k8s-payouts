@@ -1,13 +1,14 @@
 environments:
   production:
   ci:
+    values:
+    - ../config/validators.sample.yaml
 
 releases:
 - name: kusama-payouts-claimer
   chart: ../charts/polkadot-k8s-payouts
   namespace: kusama
   values:
-  - ../config/validators.sample.yaml
   - ./config/claimer.yaml.gotmpl
   - ./config/kusama/claimer.yaml.gotmpl
 
@@ -15,6 +16,5 @@ releases:
   chart: ../charts/polkadot-k8s-payouts
   namespace: polkadot
   values:
-  - ../config/validators.sample.yaml
   - ./config/claimer.yaml.gotmpl
   - ./config/polkadot/claimer.yaml.gotmpl  
