@@ -7,7 +7,7 @@ releases:
   chart: ../charts/polkadot-k8s-payouts
   namespace: kusama
   values:
-  - ../config/validators.yaml
+  - ../config/validators.sample.yaml
   - ./config/claimer.yaml.gotmpl
   - ./config/kusama/claimer.yaml.gotmpl
 
@@ -15,6 +15,6 @@ releases:
   chart: ../charts/polkadot-k8s-payouts
   namespace: polkadot
   values:
-  - ../config/validators.yaml
+  - ../config/validators.sample.yaml
   - ./config/claimer.yaml.gotmpl
   - ./config/polkadot/claimer.yaml.gotmpl  
