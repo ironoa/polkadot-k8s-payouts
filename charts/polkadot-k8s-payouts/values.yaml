@@ -2,7 +2,7 @@ environment: production
 
 image:
   repo: web3f/accountant
-  tag: v0.4.7
+  # Tag is based on appVersion in chart.yaml
 
 config:
   logLevel: info
