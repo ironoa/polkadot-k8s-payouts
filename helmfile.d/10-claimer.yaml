@@ -1,14 +1,8 @@
 environments:
   production:
+  ci:
     values:
-    - ../config/validators.yaml
-  local:
-    values:
-    - ../config/validators.yaml
-
-repositories:
-- name: ironoa
-  url: https://ironoa.github.io/helm-charts/
+    - ../config/validators.sample.yaml
 
 releases:
 - name: kusama-payouts-claimer
