@@ -8,10 +8,16 @@ config:
   logLevel: info
   wsEndpoint: "wss://rpc.polkadot.io/"
   isDeepHistoryCheckForced: false
+  retryPolicy: 
+    delayMillis: 10000
+    maxAttempts: 5
   gracePeriod:
     enabled: false
     eras: 4
   claimThirdParty:
+    parallelExecution:
+      enabled: false
+      degree: 4 
     claimerKeystore:
       filePath: '/app/keystore/wallet/wallet.json'
       passwordPath: '/app/keystore/password/password'
