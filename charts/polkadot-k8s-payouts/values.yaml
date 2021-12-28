@@ -32,11 +32,11 @@ secret:
     
 resources: 
   requests:
-    cpu: "10m"
-    memory: "50Mi"
+    cpu: "50m"
+    memory: "100Mi"
   limits:
-    cpu: "150m"
-    memory: "150Mi" 
+    cpu: "500m"
+    memory: "300Mi" 
 
 cronjob:
   schedule: "0 12 */2 * *"
