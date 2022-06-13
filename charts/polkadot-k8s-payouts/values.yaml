@@ -41,3 +41,6 @@ resources:
 cronjob:
   schedule: "0 12 */2 * *"
   timeout: true
+  concurrencyPolicy: Forbid
+  backoffLimit: 0
+  restartPolicy: Never

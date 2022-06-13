@@ -6,10 +6,10 @@ metadata:
     app: {{ .Release.Name }}
 spec:
   schedule: {{ .Values.cronjob.schedule | quote }}
-  concurrencyPolicy: Forbid
+  concurrencyPolicy: {{ .Values.cronjob.concurrencyPolicy | quote }}
   jobTemplate:
     spec:
-      backoffLimit: 0
+      backoffLimit: {{ .Values.cronjob.backoffLimit }}
       template:
         metadata:
           labels:
@@ -17,7 +17,7 @@ spec:
           annotations:
             checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
         spec:
-          restartPolicy: Never
+          restartPolicy: {{ .Values.cronjob.restartPolicy | quote }}
           containers:
           - name: {{ .Release.Name }}
             image: {{ .Values.image.repo }}:{{ .Values.image.tag | default .Chart.AppVersion }}
