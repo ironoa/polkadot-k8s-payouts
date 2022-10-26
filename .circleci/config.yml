@@ -84,6 +84,8 @@ workflows:
           filters:
             tags:
               only: /.*/
+          requires:
+            - buildImage     
       - publishImage:
           context: dockerhub-bot
           filters:
