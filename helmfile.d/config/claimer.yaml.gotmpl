@@ -1,5 +1,9 @@
 environment: {{ .Environment.Name }}
 
+{{ if eq .Environment.Name "ci" }}
+image:
+  tag: {{ env "CIRCLE_SHA1" }}
+{{ end }}
+
 config:
   logLevel: info
-  isDeepHistoryCheckForced: false

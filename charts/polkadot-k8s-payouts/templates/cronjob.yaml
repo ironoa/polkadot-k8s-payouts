@@ -36,9 +36,9 @@ spec:
             - name: config
               mountPath: /app/config
             - name: password
-              mountPath: {{ dir .Values.config.claimThirdParty.claimerKeystore.passwordPath }} 
+              mountPath: {{ dir .Values.config.claim.claimerKeystore.passwordPath }} 
             - name: wallet
-              mountPath: {{ dir .Values.config.claimThirdParty.claimerKeystore.filePath }}   
+              mountPath: {{ dir .Values.config.claim.claimerKeystore.filePath }}   
           volumes:
           - name: config
             configMap:
@@ -48,10 +48,10 @@ spec:
               secretName: {{ .Release.Name }}-password
               items:
               - key: claimer_password
-                path: {{ base .Values.config.claimThirdParty.claimerKeystore.passwordPath }}
+                path: {{ base .Values.config.claim.claimerKeystore.passwordPath }}
           - name: wallet
             secret:
               secretName: {{ .Release.Name }}-wallet
               items:
               - key: claimer_wallet_json
-                path: {{ base .Values.config.claimThirdParty.claimerKeystore.filePath }}           
+                path: {{ base .Values.config.claim.claimerKeystore.filePath }}           
