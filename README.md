@@ -2,11 +2,12 @@
 
 # Polkadot-K8s-Payouts
 
-A tool to deploy an utility that automatically claims your Kusama/Polkadot validator rewards in a Kubernetes cluster (helm chart).  
+Tool that automatically claims your Kusama/Polkadot validator rewards.  
+Deployable in a Kubernetes cluster as a cronjob (helm chart).  
 Forked from https://github.com/ironoa/polkadot-k8s-payouts
 
 
-# How it works
+# How it works - Local
 
 You can start by cloning the repo and installiing the dependencies, NodeJS and Yarn are required:
 ```
@@ -27,6 +28,10 @@ $ yarn start
 # About - Keystore Password File
 
 The password file should not contain any trailing new line charaters, therefore you could use this command to be sure to create a properly formatted password file: `echo -n "yourPassword" > yourFileName`
+
+# About - Batch Size
+
+The claims extrinsics are batched in utility.batch extrinsic calls. This parameter is the maximum number of calls to be packed into the batch extrinsic.
 
 # Optional - Grace Period
 This is an optional parameter you can add to configure a grace period limitation you wish to introduce: it will prevent a claim to be triggered if the validator rewards is not "old" enough eras from the current one.  
