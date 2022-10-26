@@ -16,7 +16,7 @@ export interface ClaimerInputConfig {
     claim: {
       enabled: boolean;
       gracePeriod: GracePeriod;
-      batchSize: number
+      batchSize: number;
       claimerKeystore: Keystore;
     };
 }

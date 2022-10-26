@@ -75,7 +75,7 @@ export class Claimer {
         if (!ledger) {
           throw new Error(`Could not get ledger for ${key}`);
         }      
-        let lastReward: number = await this.getLastReward(key)
+        const lastReward: number = await this.getLastReward(key)
         validatorsMap.set(key,{...validatorsMap.get(key),lastReward})
         
       }
