@@ -57,7 +57,8 @@ export class Claimer {
 
     private async initInstanceVariables(): Promise<void>{
       this.currentEraIndex = await getActiveEraIndex(this.api);
-      this.lastRewardMax = Number(this.api.consts.staking.historyDepth.toString())
+      this.lastRewardMax = Number(this.api.consts.staking.historyDepth?.toString())
+      if(!this.lastRewardMax) this.lastRewardMax = 84 //Polkadot runtime is not ready for this call
     }
     
     private async gatherValidatorsMap(accounts: Target[]): Promise<ValidatorsMap> {
