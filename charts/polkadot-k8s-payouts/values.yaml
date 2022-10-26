@@ -1,29 +1,26 @@
 environment: production
 
 image:
-  repo: web3f/accountant
+  repo: web3f/polkadot-payouts
   # Tag is based on appVersion in chart.yaml
 
 config:
   logLevel: info
   wsEndpoint: "wss://rpc.polkadot.io/"
-  isDeepHistoryCheckForced: false
-  retryPolicy: 
-    delayMillis: 10000
-    maxAttempts: 5
-  gracePeriod:
+  targets:
+  - alias: ALESSIO
+    validatorAddress: "16cdSZUq7kxq6mtoVMWmYXo62FnNGT9jzWjVRUg87CpL9pxP"
+  deepCheck: 
     enabled: false
-    eras: 4
-  claimThirdParty:
-    parallelExecution:
+  claim:
+    enabled: false
+    batchSize: 9
+    gracePeriod:
       enabled: false
-      degree: 4 
+      eras: 4
     claimerKeystore:
       filePath: '/app/keystore/wallet/wallet.json'
       passwordPath: '/app/keystore/password/password'
-    targets:
-    - alias: ALESSIO
-      validatorAddress: "16cdSZUq7kxq6mtoVMWmYXo62FnNGT9jzWjVRUg87CpL9pxP"
   
 secret:
   claimerPasswordValue: '}b#%q.~0QAWog'

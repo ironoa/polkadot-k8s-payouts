@@ -2,6 +2,53 @@
 
 # Polkadot-K8s-Payouts
 
-A tool to deploy an utility that automatically claims your Kusama/Polkadot validator rewards in a Kubernetes cluster.  
-This tool leverages on the official [polkadot-payout](https://github.com/w3f/polkadot-payouts) application from Web3 Foundation.
+A tool to deploy an utility that automatically claims your Kusama/Polkadot validator rewards in a Kubernetes cluster (helm chart).  
 Forked from https://github.com/ironoa/polkadot-k8s-payouts
+
+
+# How it works
+
+You can start by cloning the repo and installiing the dependencies, NodeJS and Yarn are required:
+```
+$ git clone https://github.com/w3f/polkadot-k8s-payouts
+$ cd polkadot-k8s-payouts
+$ yarn
+```
+Then you should create a configuration file, you can start by copying a sample provided with the repo and customizing it:
+```
+$ cp config/main.sample.yaml config/main.yaml
+```
+Now you can customize `config/main.yaml`, see the following configurations about how to do it. Once you are done you
+can run the tool with:
+```
+$ yarn start
+```
+
+# About - Keystore Password File
+
+The password file should not contain any trailing new line charaters, therefore you could use this command to be sure to create a properly formatted password file: `echo -n "yourPassword" > yourFileName`
+
+# Optional - Grace Period
+This is an optional parameter you can add to configure a grace period limitation you wish to introduce: it will prevent a claim to be triggered if the validator rewards is not "old" enough eras from the current one.  
+For example, in Kusama this is equivalent to a grace period of 4 days:  
+```
+# config/main.yaml
+logLevel: info
+wsEndpoint: "wss://kusama-rpc.polkadot.io/"
+gracePeriod:
+  enabled: true
+  eras: 16
+claims:
+  enabled: true
+  claimerKeystore:
+    filePath: /path/to/validator-000/keystore
+    passwordPath: /path/to/validator-000/keystore/password
+targets:
+- alias: validator-000
+validatorAddress: "<validator-000-stash-address>"
+- alias: validator-001
+validatorAddress: "<validator-001-stash-address>"  
+```
+
+# Optional - Deep Check
+This is an optional parameter you can add to force a scan starting from the last 84 era, rather then relying on the onchain account ledger information. Keep it disabled for normal operations.
