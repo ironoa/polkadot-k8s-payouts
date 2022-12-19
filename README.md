@@ -31,7 +31,8 @@ The password file should not contain any trailing new line charaters, therefore 
 
 # About - Batch Size
 
-The claims extrinsics are batched in utility.batch extrinsic calls. This parameter is the maximum number of calls to be packed into the batch extrinsic.
+The claims extrinsics are batched in utility.batch extrinsic calls. This parameter is the maximum number of calls to be packed into the batch extrinsic.  
+ATTENTION: if you increase too much this value you might incur in this extrinsic error: ![batch_error](assets/batch_error.png)
 
 # Optional - Grace Period
 This is an optional parameter you can add to configure a grace period limitation you wish to introduce: it will prevent a claim to be triggered if the validator rewards is not "old" enough eras from the current one.  
