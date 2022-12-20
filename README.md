@@ -25,6 +25,10 @@ can run the tool with:
 $ yarn start
 ```
 
+# About - Keystore file
+
+You can generate the keystore file by exporting your account either from the [polkadot.js.org app](https://polkadot.js.org/apps/#/accounts) or from the [polkadot{.js} extension](https://polkadot.js.org/extension/)
+
 # About - Keystore Password File
 
 The password file should not contain any trailing new line charaters, therefore you could use this command to be sure to create a properly formatted password file: `echo -n "yourPassword" > yourFileName`
