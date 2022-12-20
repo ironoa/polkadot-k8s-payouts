@@ -27,7 +27,7 @@ $ yarn start
 
 # About - Keystore file
 
-You can generate the keystore file by exporting your account either from the [polkadot.js.org app](https://polkadot.js.org/apps/#/accounts) or from the [polkadot{.js} extension](https://polkadot.js.org/extension/)
+You can generate the keystore file by exporting your account either from the [polkadot.js.org app](https://polkadot.js.org/apps/#/accounts)(Create a backup file) or from the [polkadot{.js} extension](https://polkadot.js.org/extension/)(Export Account)
 
 # About - Keystore Password File
 
