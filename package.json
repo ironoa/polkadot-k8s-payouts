@@ -1,6 +1,6 @@
 {
   "name": "polkadot-payouts",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Automated transfers among accounts",
   "repository": "git@github.com:w3f/accountant.git",
   "author": "W3F Infrastructure Team <devops@web3.foundation>",
@@ -17,7 +17,7 @@
     "pretest": "yarn lint",
     "test": "mocha --timeout 10000 --require ts-node/register --exit test/**/*.ts",
     "e2e-test": "mocha --timeout 300000 --require ts-node/register --exit e2e-test/**/*.ts",
-    "start": "node ./dist/index.js start"
+    "start": "NODE_OPTIONS='--max-old-space-size=4096' node ./dist/index.js start"
   },
   "dependencies": {
     "@polkadot/api": "^9.6.1",
